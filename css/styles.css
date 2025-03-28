@@ -1,0 +1,19 @@
+.header-grid {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.header-grid .header-grid-row {
+    display:flex;
+    position: relative;
+}
+
+.site-logo {
+    max-width: 250px;
+}
+
+.nav-search {
+    width: 100%;
+    max-width: 850px;
+    margin-left: auto;
+}
