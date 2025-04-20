@@ -1,1 +1,36 @@
 # CT_Recreate_Your_Favorite_Website_Using_Bootstrap_and_JavaScript
+Todo:
+- index
+    - finish navbar and sub menus
+    - hero banner
+    - about
+    - product showcase
+    - newsletter signup
+    - footer
+
+- market
+    - new releases
+    - on sale
+    - best sellers
+- profile
+    - user profile
+    - user orders
+    - account settings
+- cart
+    - current order
+    - wishlist
+    - checkout
+- news
+    - activity
+    - market news
+    - community news
+- gallery
+    - new art
+    - trending
+    - genres
+- signup
+    - signup form
+    - submit emulation
+- login
+    - login form
+    - login simulation
