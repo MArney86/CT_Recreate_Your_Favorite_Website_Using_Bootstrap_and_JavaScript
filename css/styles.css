@@ -72,8 +72,6 @@ a, body, div, nav, header, ul, ol, li {
     font-size: 100%;
 }
 
-.lg-nav .main-nav .logo
-
 .lg-nav .main-nav{
     column-gap: .5vw;
     padding-inline: .325rem;
@@ -83,7 +81,7 @@ a, body, div, nav, header, ul, ol, li {
     height: 4rem;
 }
 
-.lg-nav .main-nav .right-nav ul> li {
+.lg-nav .main-nav .right-nav ul li.nav-item {
     border-left: 1px solid black
 }
 
@@ -91,16 +89,16 @@ a, body, div, nav, header, ul, ol, li {
     column-gap: 1rem;
 }
 
-.dropdown .dropdown-toggle.show, .dropdown .dropdown-menu.show {
+.left-nav .dropdown .dropdown-toggle.show, .left-nav .dropdown .dropdown-menu.show {
     display: none !important;
 }
 
-.dropdown:hover .dropdown-menu {
+.left-nav .dropdown:hover .dropdown-menu {
     display: block !important;
 }
 
 
-.dropdown:focus .dropdown-menu {
+.left-nav .dropdown:focus .dropdown-menu {
     display: block !important;
 }
 
@@ -152,7 +150,7 @@ a, body, div, nav, header, ul, ol, li {
     padding: .75rem;
     border-radius: 0;
     position: absolute;
-    top: 95%;
+    top: 100%;
 }
 
 .lg-nav .main-nav .left-nav li.nav-item.dropdown .dropdown-toggle .dropdown-menu li:not(:last-child) a {
@@ -170,4 +168,18 @@ a, body, div, nav, header, ul, ol, li {
 
 .lg-nav .main-nav a:not(.logo):not(.dropdown-item):hover, .lg-nav .main-nav a:not(.logo):not(.dropdown-item).active {
     border-color: #e6ddd0;
+}
+
+div.user-account.dropdown ul.dropdown-menu{
+    position: relative;
+    top:100%;
+    right: 0;
+    left: auto;
+    --bs-dropdown-padding-x: .75rem;
+    --bs-dropdown-padding-y: .75rem;
+    --bs-dropdown-bg: rgb(29, 29, 29);
+    --bs-dropdown-color: #c5c5c5;
+    --bs-dropdown-border-color: rgb(29, 29, 29);
+    --bs-dropdown-border-radius: 0;
+    --bs-dropdown-link-color: #c5c5c5;
 }
