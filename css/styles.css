@@ -72,12 +72,9 @@ a, body, div, nav, header, ul, ol, li {
     font-size: 100%;
 }
 
-.lg-nav .main-nav{
+.main-nav{
     column-gap: .5vw;
     padding-inline: .325rem;
-}
-
-.lg-nav .main-nav, .sm-nav .main-nav {
     height: 4rem;
 }
 
@@ -85,11 +82,11 @@ a, body, div, nav, header, ul, ol, li {
     border-left: 1px solid black
 }
 
-.lg-nav .main-nav .right-nav .user-links ul {
+.main-nav .right-nav .user-links ul {
     column-gap: 1rem;
 }
 
-.left-nav .dropdown .dropdown-toggle.show, .left-nav .dropdown .dropdown-menu.show {
+.left-nav .dropdown .dropdown-toggle.show, .left-nav .dropdown .dropdown-menu.show  {
     display: none !important;
 }
 
@@ -102,15 +99,44 @@ a, body, div, nav, header, ul, ol, li {
     display: block !important;
 }
 
-.lg-nav .main-nav .dropdown a.nav-cat .dropdown-toggle::after {
+.main-nav .dropdown .dropdown-toggle::after, .main-nav .dropend .dropdown-toggle::after {
     content: none;
 }
 
-#acc-drop .dropdown-menu {
+#user-drop-lg .dropdown-menu, #user-drop-sm .dropdown-menu {
     position: fixed;
     right: 0;
     top: 4rem;
+    left: auto;
     z-index: 1050;
+    animation-name: user-slide-out;
+    animation-duration: .75s;
+}
+
+#user-drop-lg .dropdown-menu.show, #user-drop-sm .dropdown-menu.show {
+    animation: user-slide-in .75s forwards;
+}
+
+#user-drop-lg .dropdown-menu.closing, #user-drop-sm .dropdown-menu.closing {
+    animation: user-slide-out .75s forwards;
+}
+
+@keyframes user-slide-in {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes user-slide-out {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 .main-nav a {
@@ -123,7 +149,6 @@ a, body, div, nav, header, ul, ol, li {
     display: flex;
     align-items: center;
     white-space: nowrap;
-
 }
 
 .lg-nav .main-nav .left-nav .logo a .site-logo {
@@ -136,11 +161,7 @@ a, body, div, nav, header, ul, ol, li {
     height: 50px;
 }
 
-.lg-nav .main-nav .left-nav a:not(.logo):not(.dropdown-item), .lg-nav .main-nav .right-nav a:not(.logo):not(.dropdown-item) {
-    padding-block: 1rem;
-}
-
-.sm-nav .main-nav .left-nav a:not(.logo):not(.dropdown-item), .sm-nav .main-nav .right-nav a:not(.logo):not(.dropdown-item) {
+.main-nav .left-nav a:not(.logo):not(.dropdown-item), .main-nav .right-nav a:not(.logo):not(.dropdown-item) {
     padding-block: 1rem;
 }
 
@@ -185,11 +206,7 @@ a, body, div, nav, header, ul, ol, li {
     border-color: #e6ddd0;
 }
 
-div.user-account.dropdown ul.dropdown-menu{
-    position: relative;
-    top: 0;
-    right: 0;
-    left: auto;
+div.user-account.dropdown ul.dropdown-menu {
     --bs-dropdown-padding-x: .75rem;
     --bs-dropdown-padding-y: .75rem;
     --bs-dropdown-bg: rgb(29, 29, 29);
@@ -197,4 +214,49 @@ div.user-account.dropdown ul.dropdown-menu{
     --bs-dropdown-border-color: rgb(29, 29, 29);
     --bs-dropdown-border-radius: 0;
     --bs-dropdown-link-color: #c5c5c5;
+}
+
+div.offcanvas.offcanvas-start {
+    --bs-offcanvas-width: 300px;
+    --bs-offcanvas-bg: rgb(29, 29, 29);
+    --bs-offcanvas-color: #c5c5c5;
+    --bs-offcanvas-border-color: rgb(29, 29, 29);
+    --bs-offcanvas-border-radius: 0;
+    --bs-offcanvas-font-size: 1.5rem;
+}
+
+.navbar-nav div.offcanvas.offcanvas-start .offcanvas-body .accordion {
+    --bs-accordion-color: #c5c5c5;
+    --bs-accordion-bg: rgb(29, 29, 29);
+    --bs-accordion-border-radius: ;
+    --bs-accordion-border-color: #e6ddd0;
+    --bs-accordion-inner-border-radius: 0;
+    --bs-accordion-btn-padding-x: 1.25rem;
+    --bs-accordion-btn-padding-y: 1rem;
+    --bs-accordion-btn-color: #c5c5c5;
+    --bs-accordion-btn-bg: rgb(29, 29, 29);
+    --bs-accordion-active-color: rgb(29, 29, 29);
+    --bs-accordion-active-bg: #c5c5c5;
+    --bs-accordion-border-width: 0;
+}
+
+.navbar-nav div.offcanvas.offcanvas-start .offcanvas-body .accordion .accordion-button {
+    border-bottom: 1px solid #e6ddd0;
+}
+
+.navbar-nav div.offcanvas.offcanvas-start .offcanvas-body .nav-item:not(.accordion) {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.navbar-nav div.offcanvas.offcanvas-start .offcanvas-body .accordion .accordion-button:not(.collapsed) a {
+    color: rgb(29, 29, 29)
+}
+
+
+
+.navbar-nav div.offcanvas .accordion .accordion-body ul li {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
