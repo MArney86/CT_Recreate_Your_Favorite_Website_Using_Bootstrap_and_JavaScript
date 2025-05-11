@@ -10,7 +10,7 @@
         />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&icon_names=account_circle,arrow_forward_ios,art_track,collections,contact_support,manage_accounts,menu,newspaper,receipt_long,search,shopping_cart,stars,store&family=Open+Sans&family=Roboto" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&icon_names=account_circle,art_track,collections,contact_support,manage_accounts,menu,newspaper,receipt_long,search,shopping_cart,stars,store&family=Open+Sans&family=Roboto" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet">
         
         <!-- Bootstrap CSS v5.3.5 -->
@@ -38,7 +38,7 @@
     </head>
     <body class="bg-black m-0 p-0 fw-normal h-auto">
         <header class="w-100 m-0 p-0 b-0 position-absolute top-0">
-            <nav class="lg-nav d-none d-lg-block navbar navbar-expand position-relative m-0 p-0">
+            <nav class="lg-nav d-none d-lg-block navbar navbar-expand position-relative m-0 p-0" onload="checkLoginNavbar()">
                 <div class="main-nav w-100 d-flex align-items-stretch">
                     <ul class="left-nav navbar-nav h-100">
                         <li class="logo align-items-center">
@@ -157,7 +157,8 @@
                                 data-bs-reference="nav">
                                     <span class="material-icons-outlined">account_circle</span>
                                 </a>
-                                <ul class="dropdown-menu">
+                                <div class="dropdown-menu" id="lg-acc-drop">
+                                <ul>
                                     <li>
                                         <a href="profile.html" class="dropdown-item"><span class="material-icons-outlined">manage_accounts</span>Profile</a>
                                     </li>
@@ -170,7 +171,8 @@
                                     <li>
                                         <a href="gallery.html#personal" class="dropdown-item"><span class="material-icons-outlined">art_track</span>My Gallery</a>
                                     </li>
-                                </ul>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="cart-link">
                                 <a 
@@ -183,7 +185,7 @@
                     </ul>
                 </div>
             </nav>
-            <nav class ="sm-nav d-block d-lg-none navbar position-relative m-0 p-0">
+            <nav class ="sm-nav d-block d-lg-none navbar position-relative m-0 p-0" onload="checkLoginNavbar()">
                 <div class="main-nav d-flex align-items-stretch w-100">
                     <div class="left-nav navbar-nav flex-grow-0 flex-shrink-0 p-3 justify-content-center">
                         <a class="navbar-toggler" 
@@ -326,20 +328,9 @@
                                 data-bs-reference="nav">
                                     <span class="material-icons-outlined">account_circle</span>
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="profile.html" class="dropdown-item"><span class="material-icons-outlined">manage_accounts</span>Profile</a>
-                                    </li>
-                                    <li>
-                                        <a href="cart.html#wishlist" class="dropdown-item"><span class="material-icons-outlined">stars</span>Wishlist</a>
-                                    </li>
-                                    <li>
-                                        <a href="profile.html#order-history" class="dropdown-item"><span class="material-icons-outlined">receipt_long</span>Orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="gallery.html#personal" class="dropdown-item"><span class="material-icons-outlined">art_track</span>My Gallery</a>
-                                    </li>
-                                </ul>
+                                <div class="dropdown-menu" id="sm-acc-drop">
+                                    <h1>placeholder content</h1>
+                                </div>
                             </div>
                             <div class="cart-link">
                                 <a href="cart.html" class="align-items-center"><span class="material-icons-outlined">shopping_cart</span></a>

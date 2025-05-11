@@ -21,17 +21,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/* <ul class="dropdown-menu signed-in">
-        <li>
-            <a href="profile.html" class="dropdown-item"><span class="material-icons-outlined">manage_accounts</span>Profile</a>
-        </li>
-        <li>
-            <a href="cart.html#wishlist" class="dropdown-item"><span class="material-icons-outlined">stars</span>Wishlist</a>
-        </li>
-        <li>
-            <a href="profile.html#order-history" class="dropdown-item"><span class="material-icons-outlined">receipt_long</span>Orders</a>
-        </li>
-        <li>
-            <a href="gallery.html#personal" class="dropdown-item"><span class="material-icons-outlined">art_track</span>My Gallery</a>
-        </li>
-    </ul> */
+
+function getCookie(cookieKey) {
+ const searchKey = cookieKey + "="
+ const cookies = decodeURIComponent(document.cookie);
+ const cookieList = cookies.split(";")
+ for (let i=0;i<cookieList.length;i++) {
+     let c = cookielist[i].trimStart();
+     if (c.indexOf(searchKey == 0)) {
+         return c.substring(name.length, c.length);
+     };
+     
+ };
+ 
+ return ""
+}
+
+function checkLoginNavbar() {
+    let isLoggedIn = getCookie("loggedIn");
+    
+    let noLogged = `<form action="./signup.html">
+    <label for="acc-user-name">Username:</label><br/>
+    <input type="text" id="acc-user-name" name="acc-user-name"/><br/><br/>
+    <label for="acc-password">Password:</label><br/>
+    <input type="text" id="acc-password" name="acc-password"/><br/><br/>
+    <div class="btn-container">
+        <button type="submit" onSubmit="simLogin()">Login</button>
+        <button type="submit">Signup</button>
+    </div>
+</form>`;
+
+    yesLogged = ``;
+
+    if (isLoggedIn == "false" || isLoggedIn == "") {
+        document.getElementById(lg-acc-drop).innerHTML = noLogged;
+        document.getElementById(sm-acc-drop).innerHTML = noLogged;
+    } else {
+        document.getElementById(lg-acc-drop).innerHTML = yesLogged;
+        document.getElementById(sm-acc-drop).innerHTML = yesLogged;
+    }
+}
+
+
+
+
+
