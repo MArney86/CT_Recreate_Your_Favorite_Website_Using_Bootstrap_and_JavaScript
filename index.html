@@ -8,6 +8,7 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&icon_names=account_circle,art_track,collections,contact_support,logout,manage_accounts,menu,newspaper,receipt_long,search,shopping_cart,stars,store&family=Open+Sans&family=Roboto" rel="stylesheet" />
@@ -327,11 +328,135 @@
                 </div>
             </nav>
         </header>
+        <section class="main-banner bg-dark text-light py-5">
+            <div class="container text-center">
+                <h2 class="display-4 fw-bold mb-2 text-warning">Welcome to the 3DStore</h2>
+                <h4 class="mb-4 text-info">Your stop for Computer Generated 3D assets and software tools.</h4>
+            </div>
+        </section>
         <main>
+            <section class="about-section py-5 bg-black text-light">
+                <div class="container">
+                    <h2 class="mb-4 text-warning">About 3DStore</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum nisi nisl eget sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum nisi nisl eget sapien.
+                    </p>
+                    <p>
+                        Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien. Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum.
+                    </p>
+                </div>
+            </section>
+            <section class="container my-5">
+                <h2 class="mb-4 text-warning text-center">Featured Assets</h2>
+                <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-md-4">
+                                    <div class="card bg-dark text-light">
+                                        <img src="https://picsum.photos/400/250?random=1" class="card-img-top" alt="Asset 1">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Alpha</h5>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-none d-md-block">
+                                    <div class="card bg-dark text-light">
+                                        <img src="https://picsum.photos/400/250?random=2" class="card-img-top" alt="Asset 2">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Beta</h5>
+                                            <p class="card-text">Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-none d-md-block">
+                                    <div class="card bg-dark text-light">
+                                        <img src="https://picsum.photos/400/250?random=3" class="card-img-top" alt="Asset 3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Gamma</h5>
+                                            <p class="card-text">Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-md-4">
+                                    <div class="card bg-dark text-light">
+                                        <img src="https://picsum.photos/400/250?random=4" class="card-img-top" alt="Asset 4">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Delta</h5>
+                                            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-none d-md-block">
+                                    <div class="card bg-dark text-light">
+                                        <img src="https://picsum.photos/400/250?random=5" class="card-img-top" alt="Asset 5">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Epsilon</h5>
+                                            <p class="card-text">Sed nec felis pellentesque, lacinia dui sed, ultricies sapien.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-none d-md-block">
+                                    <div class="card bg-dark text-light">
+                                        <img src="https://picsum.photos/400/250?random=6" class="card-img-top" alt="Asset 6">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Zeta</h5>
+                                            <p class="card-text">Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </section>
+            <section class="newsletter-signup bg-dark text-light py-5">
+                <div class="container">
+                    <h2 class="mb-4 text-warning text-center">Sign Up for Our Newsletter</h2>
+                    <form id="newsletterForm" class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4">
+                            <input type="email" class="form-control mb-3" id="newsletterEmail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-warning">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
         </main>
-        <footer>
-            <!-- place footer here -->
+        <footer class="bg-dark text-light py-4 mt-5">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="mb-2 mb-md-0">
+                    <a href="index.html" class="text-warning fw-bold text-decoration-none">Matthew Arney</a>  &copy; 2025
+                </div>
+                <div class="mb-2 mb-md-0 d-flex gap-3">
+                    <a href="privacy.html" class="text-light text-decoration-none">Privacy Policy</a>
+                    <a href="tos.htm" class="text-light text-decoration-none">Terms of Service</a>
+                </div>
+                <div class="small text-secondary text-center text-md-end">
+                    Thumbs up favicon by Dave Gandy from <a href="https://www.flaticon.com/free-icons/thumbs-up" class="text-light text-decoration-none">Flaticon</a>
+                </div>
+            </div>
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
         <script 

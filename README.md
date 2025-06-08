@@ -1,12 +1,12 @@
 # CT_Recreate_Your_Favorite_Website_Using_Bootstrap_and_JavaScript
 Todo:
 - index
-    - finish navbar and sub menus
-    - hero banner
-    - about
-    - product showcase
-    - newsletter signup
-    - footer
+    x finish navbar and sub menus
+    x hero banner
+    x about
+    x product showcase
+    x newsletter signup
+    x footer
 
 - market
     - new releases
@@ -32,5 +32,7 @@ Todo:
     - signup form
     - submit emulation
 - login
-    - login form
-    - login simulation
+    x login form
+    x login simulation
+
+thumbs up favicon.png by Dave Gandy @flaticon.com
