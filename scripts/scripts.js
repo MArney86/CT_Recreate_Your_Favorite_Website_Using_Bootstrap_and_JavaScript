@@ -1,24 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => { // Wait for the DOM to load
-    const dropdowns = document.querySelectorAll('.user-account'); // Select all dropdown elements with the class .user-account
+    setupNewsletterForm(); // Call the function to setup the newsletter form
+    checkLoginNavbar(); // Check if the user is logged in and update the navbar based on response from checking cookies
+});
 
-    dropdowns.forEach((dropdown) => { // Loop through the dropdowns
-        // Listen for the Bootstrap dropdown hide event
-        dropdown.addEventListener('hide.bs.dropdown', (event) => {
-            event.preventDefault(); // Prevent immediate hiding of the dropdown
-
-            const menu = event.currentTarget.lastElementChild; // Get the dropdown menu
-            menu.classList.add('closing'); // Add the 'closing' class for the slide-out animation
-
-            // Wait for the animation to complete before hiding the dropdown
-            menu.addEventListener('animationend', () => {
-                menu.classList.remove('closing'); // Remove the 'closing' class
-                menu.classList.remove('show'); // Remove the 'show' class to hide the dropdown
-                menu.style.display = ''; // Reset the display property
-            }, { once: true });
-        });
-    });
-
-    //Add form submit event listener to the newsletter signup form
+function setupNewsletterForm() { //Add form submit event listener to the newsletter signup form
     const form = document.getElementById('newsletterForm'); // get signup form element from document by ID
 
     if(form) { 
@@ -28,10 +13,7 @@ document.addEventListener('DOMContentLoaded', () => { // Wait for the DOM to loa
             form.reset(); // reset the form
         });
     }
-
-    // Check if the user is logged in and update the navbar based on response from checking cookies
-    checkLoginNavbar();
-});
+}
 
 
 function simLogin(event) {

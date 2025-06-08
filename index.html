@@ -48,76 +48,52 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <div class="dropdown-toggle"
-                            data-bs-toggle="dropdown" 
-                            data-bs-display="static" 
-                            aria-expanded="false" 
-                            role="button">
-                                <a 
-                                href="market.html" 
-                                class="nav-cat ">
-                                    <span class="material-icons-outlined">store</span>market
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="market.html#new"">New Releases</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="market.html#sale">On Sale</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="market.html#best">Best Sellers</a>
-                                    </li>                                    
-                                </ul>
-                            </div>
+                            <a href="market.html" aria-expanded="false" role="button">
+                                <span class="material-icons-outlined">store</span>market
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="market.html#new"">New Releases</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="market.html#sale">On Sale</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="market.html#best">Best Sellers</a>
+                                </li>                                    
+                            </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <div class="dropdown-toggle"
-                            data-bs-toggle="dropdown" 
-                            data-bs-display="static" 
-                            aria-expanded="false" 
-                            role="button">
-                                <a 
-                                href="news.html" 
-                                class="nav-cat">
-                                    <span class="material-icons-outlined">newspaper</span>news
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="news.html#all">Site Activity</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="news.html#market">Market News</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="news.html#community">Community Happenings</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <a href="news.html" aria-expanded="false" role="button">
+                                <span class="material-icons-outlined">newspaper</span>news
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="news.html#all">Site Activity</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="news.html#market">Market News</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="news.html#community">Community Happenings</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <div class="dropdown-toggle"
-                            data-bs-toggle="dropdown" 
-                            data-bs-display="static" 
-                            aria-expanded="false" 
-                            role="button">
-                                <a 
-                                href="gallery.html" 
-                                class="nav-cat">
-                                    <span class="material-icons-outlined">collections</span>gallery
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="gallery.html#images">New Images</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="gallery.html#videos">New Videos</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="gallery.html#popular">Popular Submissions</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <a href="gallery.html" aria-expanded="false" role="button">
+                                <span class="material-icons-outlined">collections</span>gallery
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="gallery.html#images">New Images</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="gallery.html#videos">New Videos</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="gallery.html#popular">Popular Submissions</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="contact.html"
@@ -349,11 +325,11 @@
             <section class="container my-5">
                 <h2 class="mb-4 text-warning text-center">Featured Assets</h2>
                 <div id="featuredCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
+                    <div class="carousel-inner" id="carouselCards">
                         <div class="carousel-item active">
-                            <div class="row justify-content-center">
-                                <div class="col-md-4">
-                                    <div class="card bg-dark text-light">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card bg-dark text-light mb-3">
                                         <img src="https://picsum.photos/400/250?random=1" class="card-img-top" alt="Asset 1">
                                         <div class="card-body">
                                             <h5 class="card-title">3D Model Alpha</h5>
@@ -362,8 +338,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 d-none d-md-block">
-                                    <div class="card bg-dark text-light">
+                                <div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
+                                    <div class="card bg-dark text-light mb-3">
                                         <img src="https://picsum.photos/400/250?random=2" class="card-img-top" alt="Asset 2">
                                         <div class="card-body">
                                             <h5 class="card-title">3D Model Beta</h5>
@@ -372,8 +348,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 d-none d-md-block">
-                                    <div class="card bg-dark text-light">
+                                <div class="col-12 col-lg-4 d-none d-lg-block">
+                                    <div class="card bg-dark text-light mb-3">
                                         <img src="https://picsum.photos/400/250?random=3" class="card-img-top" alt="Asset 3">
                                         <div class="card-body">
                                             <h5 class="card-title">3D Model Gamma</h5>
@@ -384,11 +360,30 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-md-4">
-                                    <div class="card bg-dark text-light">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card bg-dark text-light mb-3">
+                                        <img src="https://picsum.photos/400/250?random=2" class="card-img-top" alt="Asset 2">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Beta</h5>
+                                            <p class="card-text">Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
+                                    <div class="card bg-dark text-light mb-3">
+                                        <img src="https://picsum.photos/400/250?random=3" class="card-img-top" alt="Asset 3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Gamma</h5>
+                                            <p class="card-text">Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4 d-none d-lg-block">
+                                    <div class="card bg-dark text-light mb-3">
                                         <img src="https://picsum.photos/400/250?random=4" class="card-img-top" alt="Asset 4">
                                         <div class="card-body">
                                             <h5 class="card-title">3D Model Delta</h5>
@@ -397,8 +392,32 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 d-none d-md-block">
-                                    <div class="card bg-dark text-light">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card bg-dark text-light mb-3">
+                                        <img src="https://picsum.photos/400/250?random=3" class="card-img-top" alt="Asset 3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Gamma</h5>
+                                            <p class="card-text">Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
+                                    <div class="card bg-dark text-light mb-3">
+                                        <img src="https://picsum.photos/400/250?random=4" class="card-img-top" alt="Asset 4">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Delta</h5>
+                                            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4 d-none d-lg-block">
+                                    <div class="card bg-dark text-light mb-3">
                                         <img src="https://picsum.photos/400/250?random=5" class="card-img-top" alt="Asset 5">
                                         <div class="card-body">
                                             <h5 class="card-title">3D Model Epsilon</h5>
@@ -407,12 +426,104 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 d-none d-md-block">
-                                    <div class="card bg-dark text-light">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card bg-dark text-light mb-3">
+                                        <img src="https://picsum.photos/400/250?random=4" class="card-img-top" alt="Asset 4">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Delta</h5>
+                                            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
+                                    <div class="card bg-dark text-light mb-3">
+                                        <img src="https://picsum.photos/400/250?random=5" class="card-img-top" alt="Asset 5">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Epsilon</h5>
+                                            <p class="card-text">Sed nec felis pellentesque, lacinia dui sed, ultricies sapien.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4 d-none d-lg-block">
+                                    <div class="card bg-dark text-light mb-3">
                                         <img src="https://picsum.photos/400/250?random=6" class="card-img-top" alt="Asset 6">
                                         <div class="card-body">
                                             <h5 class="card-title">3D Model Zeta</h5>
                                             <p class="card-text">Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card bg-dark text-light mb-3">
+                                        <img src="https://picsum.photos/400/250?random=5" class="card-img-top" alt="Asset 5">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Epsilon</h5>
+                                            <p class="card-text">Sed nec felis pellentesque, lacinia dui sed, ultricies sapien.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
+                                    <div class="card bg-dark text-light mb-3">
+                                        <img src="https://picsum.photos/400/250?random=6" class="card-img-top" alt="Asset 6">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Zeta</h5>
+                                            <p class="card-text">Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4 d-none d-lg-block">
+                                    <div class="card bg-dark text-light mb-3">
+                                        <img src="https://picsum.photos/400/250?random=1" class="card-img-top" alt="Asset 1">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Alpha</h5>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="card bg-dark text-light mb-3">
+                                        <img src="https://picsum.photos/400/250?random=6" class="card-img-top" alt="Asset 6">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Zeta</h5>
+                                            <p class="card-text">Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
+                                    <div class="card bg-dark text-light mb-3">
+                                        <img src="https://picsum.photos/400/250?random=1" class="card-img-top" alt="Asset 1">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Alpha</h5>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                            <a href="#" class="btn btn-warning">View Asset</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4 d-none d-lg-block">
+                                    <div class="card bg-dark text-light mb-3">
+                                        <img src="https://picsum.photos/400/250?random=2" class="card-img-top" alt="Asset 2">
+                                        <div class="card-body">
+                                            <h5 class="card-title">3D Model Beta</h5>
+                                            <p class="card-text">Suspendisse potenti. Etiam euismod, urna eu tincidunt consectetur.</p>
                                             <a href="#" class="btn btn-warning">View Asset</a>
                                         </div>
                                     </div>
@@ -445,15 +556,15 @@
             </section>
         </main>
         <footer class="bg-dark text-light py-4 mt-5">
-            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <div class="mb-2 mb-md-0">
-                    <a href="index.html" class="text-warning fw-bold text-decoration-none">Matthew Arney</a>  &copy; 2025
+            <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3">
+                <div class="mb-2 mb-lg-0 text-center text-lg-start">
+                    <a href="index.html" class="text-warning fw-bold text-decoration-none">Matthew Arney</a> &copy; 2025
                 </div>
-                <div class="mb-2 mb-md-0 d-flex gap-3">
+                <div class="mb-2 mb-lg-0 d-flex gap-3 justify-content-center">
                     <a href="privacy.html" class="text-light text-decoration-none">Privacy Policy</a>
                     <a href="tos.htm" class="text-light text-decoration-none">Terms of Service</a>
                 </div>
-                <div class="small text-secondary text-center text-md-end">
+                <div class="small text-secondary text-center text-lg-end">
                     Thumbs up favicon by Dave Gandy from <a href="https://www.flaticon.com/free-icons/thumbs-up" class="text-light text-decoration-none">Flaticon</a>
                 </div>
             </div>

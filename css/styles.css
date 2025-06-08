@@ -82,6 +82,13 @@ a, body, div, nav, header, ul, ol, li {
     border-left: 1px solid black
 }
 
+.lg-nav .main-nav .left-nav li.nav-item.dropdown .dropdown-menu {
+    left: 0 !important;
+    right: auto !important;
+    top: 100% !important;
+    transform: none !important;
+}
+
 .main-nav .right-nav .user-links ul {
     column-gap: 1rem;
 }
@@ -90,7 +97,7 @@ a, body, div, nav, header, ul, ol, li {
     display: none !important;
 }
 
-.left-nav .dropdown:hover .dropdown-menu {
+.left-nav .dropdown:hover > .dropdown-menu {
     display: block !important;
 }
 
@@ -104,10 +111,6 @@ a, body, div, nav, header, ul, ol, li {
 }
 
 #user-drop-lg .dropdown-menu, #user-drop-sm .dropdown-menu {
-    position: fixed;
-    right: 0;
-    top: 4rem;
-    left: auto;
     z-index: 1050;
     animation-name: user-slide-out;
     animation-duration: .75s;
@@ -200,20 +203,18 @@ a, body, div, nav, header, ul, ol, li {
     color:#c5c5c5;
 }
 
-.lg-nav .main-nav .left-nav li.nav-item.dropdown .dropdown-toggle .dropdown-menu {
+.lg-nav .main-nav .left-nav li.nav-item.dropdown .dropdown-menu {
     background-color: rgb(29, 29, 29);
     min-width: 12rem;
     padding: .75rem;
     border-radius: 0;
-    position: absolute;
-    top: 100%;
 }
 
-.lg-nav .main-nav .left-nav li.nav-item.dropdown .dropdown-toggle .dropdown-menu li:not(:last-child) a {
+.lg-nav .main-nav .left-nav li.nav-item.dropdown .dropdown-menu li:not(:last-child) a {
     padding-bottom: .25rem;
 }
 
-.lg-nav .main-nav .left-nav li.nav-item.dropdown .dropdown-toggle .dropdown-menu li a{
+.lg-nav .main-nav .left-nav li.nav-item.dropdown .dropdown-menu li a{
     display: block;
     font-size: .875rem;
     text-transform: capitalize;
