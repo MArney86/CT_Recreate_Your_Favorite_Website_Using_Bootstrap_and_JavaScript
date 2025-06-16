@@ -9,9 +9,10 @@ Todo:
     x footer
 
 - market
-    - new releases
-    - on sale
-    - best sellers
+    x new releases
+    x on sale
+    x best sellers
+    x all products
 - profile
     - user profile
     - user orders

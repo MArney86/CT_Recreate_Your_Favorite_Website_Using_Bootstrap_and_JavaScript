@@ -277,3 +277,10 @@ div.offcanvas.offcanvas-start {
     background-size: cover;
     margin-top: 4rem;
 }
+
+.prod-card {
+    max-width: 350px;
+    max-height: 450px;
+    width: auto;
+    height: auto;
+}

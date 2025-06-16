@@ -172,9 +172,155 @@ if (sessionStorage.getItem("products") === null) {
 }
 
 document.addEventListener('DOMContentLoaded', () => { // Wait for the DOM to load
-    setupNewsletterForm(); // Call the function to setup the newsletter form
+    let pageTitle = document.title;
+    console.log(pageTitle); // Log the page title to the console
+    if (pageTitle === "3DStore Market") {loadProductsMarket();} // Check if the page is the market page and load the products if in the market page
+    if (pageTitle === "Welcome to 3DStore") {setupNewsletterForm();} // Call the function to setup the newsletter form
     checkLoginNavbar(); // Check if the user is logged in and update the navbar based on response from checking cookies
 });
+
+function loadProductsMarket() {
+    const products = JSON.parse(sessionStorage.getItem("products")); // Get the products from session storage
+    
+    let marketDisplayArrays = JSON.parse(sessionStorage.getItem("marketDisplayArrays")); // Get the market display arrays from session storage
+    if (marketDisplayArrays === null) { // If the market display arrays are not set, create them
+        sessionStorage.setItem("marketDisplayArrays", JSON.stringify([getRandomizedIndices(products.length, 8), getRandomizedIndices(products.length, 8), getRandomizedIndices(products.length, 8)])); // set and store the market display arrays
+        marketDisplayArrays = JSON.parse(sessionStorage.getItem("marketDisplayArrays")); // Get the newly set market display arrays from session storage again
+    }
+
+    const productCards = products.map(product => { // Loop through each product
+            const productCard = document.createElement("div"); // Create a new div element for the product card
+            productCard.className = "col"; // Set the class for the product card
+            productCard.id = `product-${product.id}`; // Set the ID for the product card
+            // Set the card's inner HTML with all the product details for the card
+            productCard.innerHTML = `<div class="card bg-dark text-light mb-3" id="product-${product.id} key=${product.id}"> 
+                <img src="${product.image}" class="card-img-top prod-card" alt="${product.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${product.name}</h5>
+                    <p class="card-text">Artist: <span class="prodArt">${product.artist}</span></p>
+                    <p class="card-text">Price: $<span>${product.price.toFixed(2)}</span></p>
+                    <button class="btn btn-primary detail-btn" id="detail-btn-${product.id}">View Details</button>
+                </div>
+            </div>`;
+            
+            const detailBtn = productCard.querySelector(`#detail-btn-${product.id}`);
+            if (detailBtn) {
+                detailBtn.addEventListener("click", () => { // Add an event listener to the detail button
+                    productReturnModal(product.id); // Call the function to return the product modal with the product ID
+                });
+            }
+            return productCard;
+        });
+
+        //create the carousels for the market features
+        //get the sections for the Carousels
+        const newProducts = document.getElementById("new-products");
+        const saleProducts = document.getElementById("sale-products");
+        const bestProducts = document.getElementById("best-products");
+
+        //Generate the carousel based off the randomized index arrays
+        const marketCarousels = marketDisplayArrays.map((arr, idx) => {
+            const carouselSelected = document.createElement("div");
+            if (idx === 0) {
+                carouselSelected.id = "new-products-carousel";
+            } else if (idx === 1) {
+                carouselSelected.id = "sale-products-carousel";
+            } else if (idx === 2) {
+                carouselSelected.id = "best-products-carousel";
+            }
+            carouselSelected.className = "carousel slide";
+            carouselSelected.setAttribute("data-bs-ride", "carousel");
+            carouselSelected.setAttribute("key", idx);
+
+            //assemble the carousel items based on the randomized indices
+            function createCarouselItem(indices, isActive = false, start = 0) {
+                const item = document.createElement("div");
+                item.className = "carousel-item" + (isActive ? " active" : "");
+                
+                const row = document.createElement("div");
+                row.className = "row";
+                
+                for (let i = 0; i < 5; i++) {
+                    const idx = indices[(start+i) % 5]; // Calculate the position in the carousel row the card is in
+                    card = productCards[idx].cloneNode(true); // Clone the product card to avoid modifying the original
+                    if (i === 0 || i === 1) {
+                        card.className = "col d-block";
+                    } else if (i === 2) {
+                        card.className = "col d-none d-md-block";
+                    } else if (i === 3) {
+                        card.className = "col d-none d-lg-block";
+                    } else if (i === 4) {
+                        card.className = "col d-none d-xl-block"
+                    }
+                    row.appendChild(card);
+                }
+                item.appendChild(row); // Append the row to the carousel item
+                return item; // Return the carousel item
+            }
+
+            const carouselInner = document.createElement("div");
+            carouselInner.className = "carousel-inner";
+            carouselInner.id = `${carouselSelected.id}-inner`
+
+            const length = arr.length;
+            for (let i=0; i<length;i++) {
+                const isActive = (i === 0);
+                carouselItem = createCarouselItem(arr, isActive, i); // Create the carousel item with the current index
+                carouselInner.appendChild(carouselItem); // Create the carousel item and append it to the carousel inner
+            }
+            
+            carouselSelected.appendChild(carouselInner); // Append the carousel inner to the carousel selected
+            
+            // create the carousel controls
+            const prevButton = document.createElement("button");
+            prevButton.className = "carousel-control-prev";
+            prevButton.type = "button";
+            prevButton.setAttribute("data-bs-target", `#${carouselSelected.id}`);
+            prevButton.setAttribute("data-bs-slide", "prev");
+            prevButton.innerHTML = `<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>`;
+            const nextButton = document.createElement("button");
+            nextButton.className = "carousel-control-next";
+            nextButton.type = "button";
+            nextButton.setAttribute("data-bs-target", `#${carouselSelected.id}`);
+            nextButton.setAttribute("data-bs-slide", "next");
+            nextButton.innerHTML = `<span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>`;
+
+            carouselSelected.appendChild(prevButton); // Append the previous button to the carousel
+            carouselSelected.appendChild(nextButton); // Append the next button to the carousel
+            
+            return carouselSelected; // Return the carousel element
+        });
+        newProducts.appendChild(marketCarousels[0]);
+        saleProducts.appendChild(marketCarousels[1]);
+        bestProducts.appendChild(marketCarousels[2]);
+
+        const allProductsContainer = document.getElementById("all-products"); // get the all products section from the document
+        allProductsContainer.className = "row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 g-2"; // set the class for the all products section to display the products in a grid
+
+        if (allProductsContainer) {
+            productCards.forEach((productCard, idx) => {; // add the products to the all products section
+                allProductsContainer.appendChild(productCard.cloneNode(true)); // add the product card to the all products section
+            })
+        }
+}
+
+function getRandomizedIndices(products_length, count) {
+    if (count > products_length) count = products_length;
+    
+    const randomizedProducts = []; // Create an empty array to store the randomized products
+    const usedIndices = new Set(); // Create a set to store the used indices
+
+    for (let i=0; i<count; i++) { //loop through the number of requested product indices
+        const randomIndex = parseInt(Math.random() * products_length); // Generate a random index
+        if (!usedIndices.has(randomIndex)) {
+            randomizedProducts.push(randomIndex); // Add the index to the array
+            usedIndices.add(randomIndex); // Add the index to the set of used indices
+        }
+    }
+    return randomizedProducts; // Return the array of randomized products
+}
 
 function setupNewsletterForm() { //Add form submit event listener to the newsletter signup form
     const form = document.getElementById('newsletterForm'); // get signup form element from document by ID
@@ -291,13 +437,15 @@ function productReturnModal(productID) {
     const docModal = document.getElementById("productModal")
     const products= JSON.parse(sessionStorage.getItem("products"));
     const product = products.find(p => p.id === productID)
-    docModal.innerHTML = `<div class="modal-dialog modal-xl modal-dialog-scrollable">
-        <div class="modal-content">
+    innerModal = document.createElement("div");
+    innerModal.className = "modal-dialog modal-xl";
+    innerModal.id = `product-${product.id}-modal`;
+    innerModal.innerHTML = `<div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">${product.name}}</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h3 class="modal-title">${product.name}</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
             </div>
-            <div class="modal-body>
+            <div class="modal-body">
                 <div class="row">
                     <div class="col-md-6">
                         <img src="${product.image}" alt="${product.name}" class="img-fluid">
@@ -308,17 +456,31 @@ function productReturnModal(productID) {
                         <p>Artist: <span class="prodArt">${product.artist}</span></p>
                         <p>Compatible Software: ${product.compSoftware}</p>
                         <p>Price: $<span>${product.price.toFixed(2)}<span></p>
-                        <button type="button" class="btn btn-primary">Add to Cart</button>
+                        <button type="button" class="btn btn-primary" id="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <p> all rights reserved to <span class="prodArt">${product.artist}<span> and <span class="text-warning">3DStore</span></p>
+                <p> all rights reserved to <span class="prodArt">${product.artist}</span> and <span class="text-warning">3DStore</span></p>
             </div>
-        </div>
-    </div>`;
+        </div>`;
+    docModal.innerHTML = "";
+    docModal.appendChild(innerModal); // Add the inner modal to the document modal
     const modal = new bootstrap.Modal(docModal); //activate the modal
     modal.show(); // Show the modal
+
+    const addToCartButton = document.getElementById("add-to-cart");
+    if (addToCartButton) {
+        addToCartButton.addEventListener("click", () => {
+            addToCart(productID); // Add the product to the cart when the button is clicked
+        });
+    }
+
+    const closeButton = document.getElementById('close-modal'); // Get the close button from the modal
+    if (closeButton) {
+        closeButton.addEventListener('click', () => {
+            docModal.innerHTML = ""; // Clear the modal content when the close button is clicked
+    })};
 }
 
 function addToCart(productID) {
@@ -329,7 +491,7 @@ function addToCart(productID) {
     
     if (customerCart.length > 0) {
         const existingProduct = customerCart.findIndex(item => item.id === productID); // Check if the product already exists in the cart
-        if (customerCart[existingProduct] > -1) {
+        if (existingProduct > -1) {
             customerCart[existingProduct].quantity += 1; // Increase quantity if product already exists in cart
         } else { //product does not exist in cart
             customerCart.push({id: productID, quantity: 1}); // Add new product to cart
