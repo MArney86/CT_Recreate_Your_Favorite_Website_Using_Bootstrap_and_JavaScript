@@ -171,48 +171,360 @@ if (sessionStorage.getItem("products") === null) {
 ])); // Store the products in session storage
 }
 
+if (sessionStorage.getItem("gallery") === null) {
+    sessionStorage.setItem("gallery", JSON.stringify([
+    {id: 1,
+    name: "Image Alpha",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Blender",
+    artist: "vastkai",
+    type: "image",
+    media: "https://picsum.photos/400/250?random=1",},
+    {id: 2,
+    name: "Video Alpha",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi urna neque, consectetur in lacus nec, ullamcorper egestas risus. Aliquam orci est, varius in lacus tincidunt, blandit sodales arcu. Nam aliquet enim eu metus imperdiet pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc tempus nibh at nisl ultrices commodo. Mauris magna leo, ultrices nec tincidunt in, semper id nibh. Curabitur congue pellentesque vestibulum. Quisque tristique pretium sapien, in tempus tortor ullamcorper id. Ut nec mollis ligula. Fusce fringilla vestibulum magna a gravida. Nunc ultricies lobortis leo. Suspendisse a nibh eros. Nullam quis eleifend purus. Curabitur in sapien nunc. Nulla facilisi. Nullam blandit elit in felis elementum, ac volutpat lectus iaculis.</p>
+                <p>Integer eleifend mi magna. Donec venenatis rutrum tortor et maximus. Praesent tincidunt bibendum faucibus. Donec eu dictum lectus. Sed varius tempor nulla. Aliquam hendrerit auctor porttitor. Curabitur nec nulla ut purus posuere sagittis congue sit amet libero. Aliquam sit amet metus ut metus iaculis scelerisque a eget enim. Phasellus eu maximus arcu.</p>`,
+    usedSoftware: "Poser, Metasequoia",
+    artist: "fandangoarroo",
+    type: "video",
+    media: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",},
+    {id: 3,
+    name: "Image Beta",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Integer eleifend mi magna. Donec venenatis rutrum tortor et maximus. Praesent tincidunt bibendum faucibus. Donec eu dictum lectus. Sed varius tempor nulla. Aliquam hendrerit auctor porttitor. Curabitur nec nulla ut purus posuere sagittis congue sit amet libero. Aliquam sit amet metus ut metus iaculis scelerisque a eget enim. Phasellus eu maximus arcu.</p>`,
+    usedSoftware: "Blender, Adobe After Effects",
+    artist: "firedoaks",
+    type: "image",
+    media: "https://picsum.photos/400/250?random=2",},
+    {id: 4,
+    name: "Image Gamma",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi urna neque, consectetur in lacus nec, ullamcorper egestas risus. Aliquam orci est, varius in lacus tincidunt, blandit sodales arcu. Nam aliquet enim eu metus imperdiet pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc tempus nibh at nisl ultrices commodo. Mauris magna leo, ultrices nec tincidunt in, semper id nibh. Curabitur congue pellentesque vestibulum. Quisque tristique pretium sapien, in tempus tortor ullamcorper id. Ut nec mollis ligula. Fusce fringilla vestibulum magna a gravida. Nunc ultricies lobortis leo. Suspendisse a nibh eros. Nullam quis eleifend purus. Curabitur in sapien nunc. Nulla facilisi. Nullam blandit elit in felis elementum, ac volutpat lectus iaculis.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Poser, Metasequoia",
+    artist: "opossumexactly",
+    type: "image",
+    media: "https://picsum.photos/400/400?random=3",},
+    {id: 5,
+    name: "Video Beta",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Adobe After Effects",
+    artist: "shadesoxacillin",
+    type: "video",
+    media: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",},
+    {id: 6,
+    name: "Image Delta",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Daz Studio, Blender",
+    artist: "fandangoarroo",
+    type: "image",
+    media: "https://picsum.photos/300/450?random=4",},
+    {id: 7,
+    name: "Video Gamma",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Blender, Adobe After Effects",
+    artist: "klemensadalbert",
+    type: "video",
+    media: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",},
+    {id: 8,
+    name: "Image Epsilon",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Adobe Photoshop, Blender",
+    artist: "scuffleeggnog",
+    type: "image",
+    media: "https://picsum.photos/400/400?random=5",},
+    {id: 9,
+    name: "Image Zeta",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Blender, Adobe Illustrator",
+    artist: "shadesoxacillin",
+    type: "image",
+    media: "https://picsum.photos/298/500?random=6",},
+    {id: 10,
+    name: "Video Delta",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Daz Studio, Adobe After Effects",
+    artist: "damaborthladd",
+    type: "video",
+    media: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",},
+    {id: 11,
+    name: "Image Eta",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Blender, Adobe Photoshop",
+    artist: "vastkai",
+    type: "image",
+    media: "https://picsum.photos/448/220?random=7",},
+    {id: 12,
+    name: "Video Epsilon",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Blender, Adobe After Effects",
+    artist: "criodeidh",
+    type: "video",
+    media: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",},
+    {id: 13,
+    name: "Image Theta",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Blender, Adobe Photoshop",
+    artist: "vastkai",
+    type: "image",
+    media: "https://picsum.photos/140/350?random=8",},
+    {id: 14,
+    name: "Video Epsilon",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Blender, Adobe After Effects",
+    artist: "criodeidh",
+    type: "video",
+    media: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",},
+    {id: 15,
+    name: "Image Iota",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Blender, Adobe Photoshop",
+    artist: "vastkai",
+    type: "image",
+    media: "https://picsum.photos/500/250?random=9",},
+    {id: 16,
+    name: "Image Kappa",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Blender, Adobe Photoshop",
+    artist: "damaborthladd",
+    type: "image",
+    media: "https://picsum.photos/500/250?random=10",},
+    {id: 17,
+    name: "Image Lambda",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Blender, Adobe Photoshop",
+    artist: "vastkai",
+    type: "image",
+    media: "https://picsum.photos/448/220?random=11",},
+    {id: 18,
+    name: "Image Mu",
+    description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+    usedSoftware: "Blender, Adobe Photoshop",
+    artist: "criodeidh",
+    type: "image",
+    media: "https://picsum.photos/140/350?random=12",}]));
+}
+
+const products = JSON.parse(sessionStorage.getItem("products")); // Get the products from session storage
+const gallery = JSON.parse(sessionStorage.getItem("gallery")); // Get the gallery from session storage
+const images = gallery.filter(item => item.type === "image"); // Get the images from the gallery
+const videos = gallery.filter(item => item.type === "video"); // Get the videos from the gallery
+
+let galleryDisplayArrays = JSON.parse(sessionStorage.getItem("galleryDisplayArrays")); // Get the market display arrays from session storage
+if (galleryDisplayArrays === null) { // If the market display arrays are not set, create them
+    sessionStorage.setItem("galleryDisplayArrays", JSON.stringify([[0,1,2,3,4,5,6,7], [0,1,2,3,4,5], getRandomizedIndices(gallery.length, 8)])); // set and store the market display arrays
+    galleryDisplayArrays = JSON.parse(sessionStorage.getItem("galleryDisplayArrays")); // Get the newly set market display arrays from session storage again
+}
+
+let marketDisplayArrays = JSON.parse(sessionStorage.getItem("marketDisplayArrays")); // Get the market display arrays from session storage
+if (marketDisplayArrays === null) { // If the market display arrays are not set, create them
+    sessionStorage.setItem("marketDisplayArrays", JSON.stringify([getRandomizedIndices(products.length, 8), getRandomizedIndices(products.length, 8), getRandomizedIndices(products.length, 8)])); // set and store the market display arrays
+    marketDisplayArrays = JSON.parse(sessionStorage.getItem("marketDisplayArrays")); // Get the newly set market display arrays from session storage again
+}
+
 document.addEventListener('DOMContentLoaded', () => { // Wait for the DOM to load
     let pageTitle = document.title;
-    console.log(pageTitle); // Log the page title to the console
+    if (pageTitle === "3DStore Gallery") {loadGallery();}// Check if the page is the gallery page and load the gallery
     if (pageTitle === "3DStore Market") {loadProductsMarket();} // Check if the page is the market page and load the products if in the market page
     if (pageTitle === "Welcome to 3DStore") {setupNewsletterForm();} // Call the function to setup the newsletter form
     checkLoginNavbar(); // Check if the user is logged in and update the navbar based on response from checking cookies
 });
 
-function loadProductsMarket() {
-    const products = JSON.parse(sessionStorage.getItem("products")); // Get the products from session storage
-    
-    let marketDisplayArrays = JSON.parse(sessionStorage.getItem("marketDisplayArrays")); // Get the market display arrays from session storage
-    if (marketDisplayArrays === null) { // If the market display arrays are not set, create them
-        sessionStorage.setItem("marketDisplayArrays", JSON.stringify([getRandomizedIndices(products.length, 8), getRandomizedIndices(products.length, 8), getRandomizedIndices(products.length, 8)])); // set and store the market display arrays
-        marketDisplayArrays = JSON.parse(sessionStorage.getItem("marketDisplayArrays")); // Get the newly set market display arrays from session storage again
+function buildCarousel(carouselId,cardArr,indexArr) {
+    function createCarouselItem(isActive = false, start = 0) {
+        const item = document.createElement("div");
+        item.className = "carousel-item" + (isActive ? " active" : "");
+                
+        const row = document.createElement("div");
+        row.className = "row";
+                
+        for (let i = 0; i < 5; i++) {
+            const idx = indexArr[(start+i) % 5]; // Calculate the position in the carousel row the card is in
+            card = cardArr[idx].cloneNode(true); // Clone the product card to avoid modifying the original
+            if (i === 0 || i === 1) {
+                card.className = "col d-block";
+            } else if (i === 2) {
+                card.className = "col d-none d-md-block";
+            } else if (i === 3) {
+                card.className = "col d-none d-lg-block";
+            } else if (i === 4) {
+                card.className = "col d-none d-xl-block"
+            }
+            row.appendChild(card);
+        }
+        item.appendChild(row); // Append the row to the carousel item
+        return item; // Return the carousel item
     }
 
-    const productCards = products.map(product => { // Loop through each product
-            const productCard = document.createElement("div"); // Create a new div element for the product card
-            productCard.className = "col"; // Set the class for the product card
-            productCard.id = `product-${product.id}`; // Set the ID for the product card
-            // Set the card's inner HTML with all the product details for the card
-            productCard.innerHTML = `<div class="card bg-dark text-light mb-3" id="product-${product.id} key=${product.id}"> 
-                <img src="${product.image}" class="card-img-top prod-card" alt="${product.name}">
+    const carousel = document.createElement("div"); // Create a new div element for the carousel
+    carousel.id = carouselId; // Set the ID for the carousel
+    carousel.className = "carousel slide"; // Set the class for the carousel
+    carousel.setAttribute("data-bs-ride", "carousel"); // Set the data attribute for the carousel to enable automatic sliding
+    
+    const carouselInner = document.createElement("div"); // Create a new div element for the carousel inner
+    carouselInner.className = "carousel-inner"; // Set the class for the carousel inner
+    carouselInner.id = `${carouselId}-inner`; // Set the ID for the carousel inner
+
+    const length = cardArr.length; // Get the length of the card array
+
+    for (let i=0; i<length;i++) {
+        const isActive = (i === 0);
+        const carouselItem = createCarouselItem(isActive, i); // Create the carousel item with the current index
+        carouselInner.appendChild(carouselItem); // append the carousel item to the carousel inner
+    }
+
+    carousel.appendChild(carouselInner); // Append the carousel inner to the carousel
+    // create the carousel controls
+    const prevButton = document.createElement("button");
+    prevButton.className = "carousel-control-prev";
+    prevButton.type = "button";
+    prevButton.setAttribute("data-bs-target", `#${carousel.id}`);
+    prevButton.setAttribute("data-bs-slide", "prev");
+    prevButton.innerHTML = `<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>`;
+    const nextButton = document.createElement("button");
+    nextButton.className = "carousel-control-next";
+    nextButton.type = "button";
+    nextButton.setAttribute("data-bs-target", `#${carousel.id}`);
+    nextButton.setAttribute("data-bs-slide", "next");
+    nextButton.innerHTML = `<span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>`;
+
+    carousel.appendChild(prevButton); // Append the previous button to the carousel
+    carousel.appendChild(nextButton); // Append the next button to the carousel
+
+    return carousel; // Return the carousel element
+}
+
+function buildCardArr(objectArr, type = "product") {
+    let cardArr = [];
+    if (type === "product") {
+        cardArr = objectArr.map(object => {
+            const card = document.createElement("div"); // Create a new div element for the card
+            card.className = "col"; // Set the class for the card
+            card.id = `product-${object.id}`; // Set the ID for the card
+            card.innerHTML = `<div class="card bg-dark text-light mb-3 prod-card" id="product-${object.id} key=${object.id}"> 
+                <img src="${object.image}" class="card-img-top" alt="${object.name}">
                 <div class="card-body">
-                    <h5 class="card-title">${product.name}</h5>
-                    <p class="card-text">Artist: <span class="prodArt">${product.artist}</span></p>
-                    <p class="card-text">Price: $<span>${product.price.toFixed(2)}</span></p>
-                    <button class="btn btn-primary detail-btn" id="detail-btn-${product.id}">View Details</button>
+                    <h5 class="card-title">${object.name}</h5>
+                    <p class="card-text">Artist: <span class="prodArt">${object.artist}</span></p>
+                    <p class="card-text">Price: $<span>${object.price.toFixed(2)}</span></p>
+                    <button class="btn btn-primary detail-btn" id="detail-btn-${object.id}">View Details</button>
                 </div>
             </div>`;
-            
-            const detailBtn = productCard.querySelector(`#detail-btn-${product.id}`);
+            const detailBtn = card.querySelector(`#detail-btn-${object.id}`); // Get the detail button from the card
             if (detailBtn) {
-                detailBtn.addEventListener("click", () => { // Add an event listener to the detail button
-                    productReturnModal(product.id); // Call the function to return the product modal with the product ID
-                });
+                detailBtn.addEventListener("click", () => {productReturnModal(object.id);}); // Add an event listener to the detail button
             }
-            return productCard;
+        })
+    } else if (type === "gallery") {
+        cardArr = objectArr.map(object => {
+            const card = document.createElement("div"); // Create a new div element for the card
+            card.className = "col"; // Set the class for the card
+            card.id = `gallery-piece-${object.id}`; // Set the ID for the card
+            const mediaTagged = object.type === "video" ? `video width=200 controls class="card-img-top gall-card">
+                <source src=${object.media} type="video/mp4">
+                This Browser does not support the HTML5 Video Tag
+            </video` : `img src=${object.media} class="card-img-top gall-card" alt=${object.name}`; // Determine if the media is a video or an image
+            card.innerHTML = `<div class="card bg-dark text-light mb-3" id="gallery-${object.id} key=${object.id}"> 
+                <${mediaTagged}>
+                <div class="card-body">
+                    <h5 class="card-title">${object.name}</h5>
+                    <p class="card-text">Artist: <span class="prodArt">${object.artist}</span></p>
+                    <p class="card-text">Used Software: <span class="prodArt">${object.usedSoftware}</span></p>
+                    <button class="btn btn-primary detail-btn" id="detail-btn-${object.id}">View Details</button>
+                </div>
+            </div>`;
+            const detailBtn = card.querySelector(`#detail-btn-${object.id}`); // Get the detail button from the card
+            if (detailBtn) {
+                detailBtn.addEventListener("click", () => {galleryReturnModal(object.id);}); // Add an event listener to the detail button
+                
+            }
+            return card;
         });
+    } else {
+        console.error ("Invalid card type specified. Please use appropriate type for card creation.")
+        return null; // Return null if the type is invalid
+    }
+    
+    console.log(cardArr)
+    return cardArr; // Return the array of card elements
+}
 
-        //create the carousels for the market features
+function loadGallery() {
+    const galleryDisplayArrays = JSON.parse(sessionStorage.getItem("galleryDisplayArrays")); // Get the gallery display arrays from session storage
+    //create the carousels for the market features
+        //get the sections for the Carousels
+        const galleryImages = document.getElementById("gallery-images");
+        const galleryVideos = document.getElementById("gallery-videos");
+        const galleryPopular = document.getElementById("gallery-popular");
+
+        //Generate the carousel based off the randomized index arrays
+        const galleryCarousels = galleryDisplayArrays.map((arr, idx) => {
+            let carouselId = "";
+            let cardArr = [];
+            if (idx === 0) {
+                carouselId = "gallery-images-carousel";
+                cardArr = buildCardArr(images, "gallery");
+                console.log(cardArr, arr);
+            } else if (idx === 1) {
+                carouselId = "gallery-videos-carousel";
+                cardArr = buildCardArr(videos, "gallery");
+            } else if (idx === 2) {
+                carouselId = "gallery-popular-carousel";
+                cardArr = buildCardArr(gallery, "gallery");
+            }
+            const carouselSelected = buildCarousel(carouselId, cardArr, arr); // Build the carousel with the products and the randomized indices
+            return carouselSelected; // Return the carousel element
+        });
+        galleryImages.appendChild(galleryCarousels[0]);
+        galleryVideos.appendChild(galleryCarousels[1]);
+        galleryPopular.appendChild(galleryCarousels[2]);
+
+        const galleryAllContainer = document.getElementById("gallery-all"); // get the all products section from the document
+        galleryAllContainer.className = "row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 g-2"; // set the class for the all products section to display the products in a grid
+
+        const galleryAllCards = buildCardArr(gallery, "gallery"); // Build the product cards for the all products section
+        if (galleryAllContainer) {
+            galleryAllCards.forEach(galleryCard => {; // add the products to the all products section
+                galleryAllContainer.appendChild(galleryCard.cloneNode(true)); // add the product card to the all products section
+            })
+        }
+}
+
+function loadProductsMarket() {
+    //create the carousels for the market features
         //get the sections for the Carousels
         const newProducts = document.getElementById("new-products");
         const saleProducts = document.getElementById("sale-products");
@@ -220,76 +532,15 @@ function loadProductsMarket() {
 
         //Generate the carousel based off the randomized index arrays
         const marketCarousels = marketDisplayArrays.map((arr, idx) => {
-            const carouselSelected = document.createElement("div");
+            let carouselId = "";
             if (idx === 0) {
-                carouselSelected.id = "new-products-carousel";
+                carouselId = "new-products-carousel";
             } else if (idx === 1) {
-                carouselSelected.id = "sale-products-carousel";
+                carouselId = "sale-products-carousel";
             } else if (idx === 2) {
-                carouselSelected.id = "best-products-carousel";
+                carouselId = "best-products-carousel";
             }
-            carouselSelected.className = "carousel slide";
-            carouselSelected.setAttribute("data-bs-ride", "carousel");
-            carouselSelected.setAttribute("key", idx);
-
-            //assemble the carousel items based on the randomized indices
-            function createCarouselItem(indices, isActive = false, start = 0) {
-                const item = document.createElement("div");
-                item.className = "carousel-item" + (isActive ? " active" : "");
-                
-                const row = document.createElement("div");
-                row.className = "row";
-                
-                for (let i = 0; i < 5; i++) {
-                    const idx = indices[(start+i) % 5]; // Calculate the position in the carousel row the card is in
-                    card = productCards[idx].cloneNode(true); // Clone the product card to avoid modifying the original
-                    if (i === 0 || i === 1) {
-                        card.className = "col d-block";
-                    } else if (i === 2) {
-                        card.className = "col d-none d-md-block";
-                    } else if (i === 3) {
-                        card.className = "col d-none d-lg-block";
-                    } else if (i === 4) {
-                        card.className = "col d-none d-xl-block"
-                    }
-                    row.appendChild(card);
-                }
-                item.appendChild(row); // Append the row to the carousel item
-                return item; // Return the carousel item
-            }
-
-            const carouselInner = document.createElement("div");
-            carouselInner.className = "carousel-inner";
-            carouselInner.id = `${carouselSelected.id}-inner`
-
-            const length = arr.length;
-            for (let i=0; i<length;i++) {
-                const isActive = (i === 0);
-                carouselItem = createCarouselItem(arr, isActive, i); // Create the carousel item with the current index
-                carouselInner.appendChild(carouselItem); // Create the carousel item and append it to the carousel inner
-            }
-            
-            carouselSelected.appendChild(carouselInner); // Append the carousel inner to the carousel selected
-            
-            // create the carousel controls
-            const prevButton = document.createElement("button");
-            prevButton.className = "carousel-control-prev";
-            prevButton.type = "button";
-            prevButton.setAttribute("data-bs-target", `#${carouselSelected.id}`);
-            prevButton.setAttribute("data-bs-slide", "prev");
-            prevButton.innerHTML = `<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>`;
-            const nextButton = document.createElement("button");
-            nextButton.className = "carousel-control-next";
-            nextButton.type = "button";
-            nextButton.setAttribute("data-bs-target", `#${carouselSelected.id}`);
-            nextButton.setAttribute("data-bs-slide", "next");
-            nextButton.innerHTML = `<span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>`;
-
-            carouselSelected.appendChild(prevButton); // Append the previous button to the carousel
-            carouselSelected.appendChild(nextButton); // Append the next button to the carousel
-            
+            const carouselSelected = buildCarousel(carouselId, buildCardArr(products, "product"), arr); // Build the carousel with the products and the randomized indices
             return carouselSelected; // Return the carousel element
         });
         newProducts.appendChild(marketCarousels[0]);
@@ -298,9 +549,9 @@ function loadProductsMarket() {
 
         const allProductsContainer = document.getElementById("all-products"); // get the all products section from the document
         allProductsContainer.className = "row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 g-2"; // set the class for the all products section to display the products in a grid
-
+        const productCards = buildCardArr(products, "product"); // Build the product cards from the products array
         if (allProductsContainer) {
-            productCards.forEach((productCard, idx) => {; // add the products to the all products section
+            productCards.forEach(productCard => {; // add the products to the all products section
                 allProductsContainer.appendChild(productCard.cloneNode(true)); // add the product card to the all products section
             })
         }
@@ -431,6 +682,58 @@ function checkLoginNavbar() { // checks login status and updates the navbar acco
     if (loginBtn) loginBtn.addEventListener("click", simLogin);
     if (signupBtn) signupBtn.addEventListener("click", simSignup);
     if (logoutBtn) logoutBtn.addEventListener("click", simLogout);
+}
+
+function galleryModal(galleryID) {
+    const docModal = document.getElementById("galleryModal")
+    const exhibit = gallery.find(p => p.id === galleryID)
+    innerModal = document.createElement("div");
+    innerModal.className = "modal-dialog modal-xl gall-modal";
+    innerModal.id = `gallery-exhibit-${exhibit.id}-modal`;
+    modalMedia = exhibit.type === "video" ? `video controls class="card-img-top w-100 h-auto">
+                <source src=${exhibit.media} type="video/mp4">
+                This Browser does not support the HTML5 Video Tag
+            </video` : `img src=${exhibit.media} class="card-img-top w-100" alt=${exhibit.name}`
+    innerModal.innerHTML = `<div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">${exhibit.name}</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <${modalMedia}>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>${exhibit.name}</h5>
+                        <p>${exhibit.description}</p>
+                        <p>Artist: <span class="gallArt">${exhibit.artist}</span></p>
+                        <p>Compatible Software: ${exhibit.usedSoftware}</p>
+                        <p>Mediatype: ${exhibit.type}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p> all rights reserved to <span class="prodArt">${exhibit.artist}</span> and <span class="text-warning">3DStore</span></p>
+            </div>
+        </div>`;
+    docModal.innerHTML = "";
+    docModal.appendChild(innerModal); // Add the inner modal to the document modal
+    const modal = new bootstrap.Modal(docModal); //activate the modal
+    modal.show(); // Show the modal
+
+    const addToCartButton = document.getElementById("add-to-cart");
+    if (addToCartButton) {
+        addToCartButton.addEventListener("click", () => {
+            addToCart(productID); // Add the product to the cart when the button is clicked
+        });
+    }
+
+    const closeButton = document.getElementById('close-modal'); // Get the close button from the modal
+    if (closeButton) {
+        closeButton.addEventListener('click', () => {
+            docModal.innerHTML = ""; // Clear the modal content when the close button is clicked
+    })};
 }
 
 function productReturnModal(productID) {

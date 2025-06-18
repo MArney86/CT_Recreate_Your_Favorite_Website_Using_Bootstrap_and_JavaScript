@@ -26,9 +26,9 @@ Todo:
     - market news
     - community news
 - gallery
-    - new art
-    - trending
-    - genres
+    x new art
+    x trending
+    x genres
 - signup
     - signup form
     - submit emulation

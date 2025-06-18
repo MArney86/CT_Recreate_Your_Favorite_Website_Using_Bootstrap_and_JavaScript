@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Recreate your Favorite Website Using Bootstrap and JS</title>
+        <title>3DStore Gallery</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -303,8 +303,58 @@
                 </div>
             </nav>
         </header>
+        <section class="site-banner bg-dark text-light py-5">
+            <div class="container text-center">
+                <h1 class="display-4 fw-bold mb-2 text-warning">3DStore User Gallery</h1>
+            </div>
+        </section>
         <main>
+            <div class="modal" data-bs-backdrop="static" id="galleryModal" >
+                <!--Modal to be dynamically inserted here-->
+            </div>
 
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-start text-white my-4">Images</h3>
+                    </div>
+                </div>
+                <div class="row" id="gallery-images">
+                    <!-- New products will be dynamically inserted here -->
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-start text-white my-4">Videos</h3>
+                    </div>
+                </div>
+                <div class="row" id="gallery-videos">
+                    <!-- Sale products will be dynamically inserted here -->
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-start text-white my-4">Popular</h3>
+                    </div>
+                </div>
+                <div class="row" id="gallery-popular">
+                    <!-- Best selling products will be dynamically inserted here -->
+                </div>
+            </div>
+            <div class="accordion" id="gallery-all-accordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gallery-all-collapse" aria-expanded="false" aria-controls="gallery-all-collapse">
+                            All Images and Videos
+                        </button>
+                    </h3>
+                    <div id="gallery-all-collapse" class="accordion-collapse collapse" aria-labelledby="heading-gallery-all" data-bs-parent="#gallery-all-accordion">
+                        <div class="accordion-body">
+                            <div class="row" id="gallery-all">
+                                <!-- All products will be dynamically inserted here -->
+                            </div>
+                        </div>
+                </div>
         </main>
         <footer class="bg-dark text-light py-4 mt-5">
             <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3">
