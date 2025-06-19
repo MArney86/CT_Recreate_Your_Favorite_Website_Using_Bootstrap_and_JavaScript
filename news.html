@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Recreate your Favorite Website Using Bootstrap and JS</title>
+        <title>3DStore Site News</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -303,8 +303,49 @@
                 </div>
             </nav>
         </header>
+        <section class="site-banner bg-dark text-light py-5">
+            <div class="container text-center">
+                <h1 class="display-4 fw-bold mb-2 text-warning">3DStore Community News</h1>
+            </div>
+        </section>
         <main>
+            <div class="modal fade" data-bs-backdrop="static" id="news-modal" tabindex="-1" aria-labelledby="news-modal-label" aria-hidden="true">
+                <!--Modal to be dynamically inserted here-->
+            </div>
 
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-start text-white my-4">Market News</h3>
+                    </div>
+                </div>
+                <div class="row" id="news-market">
+                    <!-- New products will be dynamically inserted here -->
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="text-start text-white my-4">Community News</h3>
+                    </div>
+                </div>
+                <div class="row" id="news-community">
+                    <!-- Community news will be dynamically inserted here -->
+                </div>
+            </div>
+            <div class="accordion" id="news-all-accordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#news-all-collapse" aria-expanded="false" aria-controls="news-all-collapse">
+                            All Images and Videos
+                        </button>
+                    </h3>
+                    <div id="news-all-collapse" class="accordion-collapse collapse" aria-labelledby="heading-news-all" data-bs-parent="#news-all-accordion">
+                        <div class="accordion-body">
+                            <div class="row" id="news-all">
+                                <!-- All products will be dynamically inserted here -->
+                            </div>
+                        </div>
+                </div>
         </main>
         <footer class="bg-dark text-light py-4 mt-5">
             <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3">

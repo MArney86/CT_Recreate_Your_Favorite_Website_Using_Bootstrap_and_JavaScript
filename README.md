@@ -22,9 +22,9 @@ Todo:
     - wishlist
     - checkout
 - news
-    - activity
-    - market news
-    - community news
+    x activity
+    x market news
+    x community news
 - gallery
     x new art
     x trending
