@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Recreate your Favorite Website Using Bootstrap and JS</title>
+        <title>3DStore Your Account Profile</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -53,13 +53,13 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="market.html#new"">New Releases</a>
+                                    <a class="dropdown-item" href="market.html#new-products">New Releases</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="market.html#sale">On Sale</a>
+                                    <a class="dropdown-item" href="market.html#sale-products">On Sale</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="market.html#best">Best Sellers</a>
+                                    <a class="dropdown-item" href="market.html#best-products">Best Sellers</a>
                                 </li>                                    
                             </ul>
                         </li>
@@ -303,9 +303,41 @@
                 </div>
             </nav>
         </header>
-        <main>
+        <section class="site-banner bg-dark text-light py-5">
+            <div class="container text-center">
+                <h1 class="display-4 fw-bold mb-2 text-warning">3DStore Market</h1>
+            </div>
+        </section>
+        <main class="container py-5">
+        <!-- Greeting Section -->
+        <section class="mb-5" id="greeting-section">
+            <h2 class="text-warning">Hello <span id="username"></span>!</h2>
+        </section>
 
-        </main>
+        <!-- Previous Orders Section -->
+        <section class="mb-5" id="orders-section">
+            <h3 class="text-light">Previous Orders</h3>
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Order Number</th>
+                        <th>Date</th>
+                        <th>Products</th>
+                        <th>Final Price</th>
+                    </tr>
+                </thead>
+                <tbody id="order-history">
+                    <!-- Orders will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Wishlist Section -->
+        <section id="wishlist">
+            <h3 class="text-light">Wishlist</h3>
+            <p class="text-secondary">Coming soon...</p>
+        </section>
+    </main>
         <footer class="bg-dark text-light py-4 mt-5">
             <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3">
                 <div class="mb-2 mb-lg-0 text-center text-lg-start">

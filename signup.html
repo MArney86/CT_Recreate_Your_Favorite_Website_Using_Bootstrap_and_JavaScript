@@ -1,43 +1,20 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>3DStore Contact Information</title>
+        <title>Signup</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&icon_names=account_circle,art_track,collections,contact_support,email,location_on,logout,manage_accounts,menu,newspaper,phone,receipt_long,search,shopping_cart,stars,store&family=Open+Sans&family=Roboto" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&family=Open+Sans&family=Roboto" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet">
-        
-        <!-- Bootstrap CSS v5.3.5 -->
-        <link 
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" 
-            rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" 
-            crossorigin="anonymous"
-        >
-        <script 
-            src="https://kit.fontawesome.com/22e88e3750.js" 
-            crossorigin="anonymous">
-        </script>
-        <style>
-            .material-icons-outlined {
-            font-size: 1.25em;
-            transform: translateY(4px);
-            }
-
-            a, ol, ul, body {
-                font-family: "Open Sans", "Roboto", Arial, Helvetica, sans-serif;
-            }
-
-
-        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/22e88e3750.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-black m-0 p-0 fw-normal h-auto">
+        <!-- Header from gallery.html -->
         <header class="w-100 m-0 p-0 b-0 position-absolute top-0">
             <nav class="lg-nav d-none d-lg-block navbar navbar-expand position-relative m-0 p-0">
                 <div class="main-nav w-100 d-flex align-items-stretch">
@@ -305,47 +282,27 @@
         </header>
         <section class="site-banner bg-dark text-light py-5">
             <div class="container text-center">
-                <h1 class="display-4 fw-bold mb-2 text-warning">Contact Us </h1>
+                <h1 class="display-4 fw-bold mb-2 text-warning">Signup</h1>
             </div>
         </section>
         <main>
             <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="bg-dark text-light rounded-3 shadow-sm p-4">
-                        <h2 class="mb-3 text-warning"><span class="material-icons-outlined align-middle" style="transform: translateY(-4px);">contact_support</span> Contact Us</h2>
-                        <p class="mb-4 text-secondary">
-                            Have a question, suggestion, or need help? Fill out the form below and our team will get back to you as soon as possible.
-                        </p>
-                        <form>
-                            <div class="mb-3">
-                                <label for="contact-name" class="form-label">Name</label>
-                                <input type="text" class="form-control bg-black text-light border-secondary" id="name-input" placeholder="Your Name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="contact-email" class="form-label">Email</label>
-                                <input type="email" class="form-control bg-black text-light border-secondary" id="email-input" placeholder="you@email.com" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="contact-message" class="form-label">Message</label>
-                                <textarea class="form-control bg-black text-light border-secondary" id="message-input" rows="5" placeholder="Type your message here..." id="message-input" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-warning fw-bold px-4" id="send-message">Send Message</button>
-                        </form>
-                        <div class="mt-3" id="message-container"></div>
-                        <hr class="bg-secondary my-4">
-                        <div class="small text-secondary-subtle">
-                            <span class="material-icons-outlined align-middle">email</span>
-                            support@3dstore.com<br>
-                            <span class="material-icons-outlined align-middle">location_on</span>
-                            1234 3DStore Lane, Imaginary City, 3D 12345<br>
-                            <span class="material-icons-outlined align-middle">phone</span>
-                            (555) 123-4567
-                        </div>
+                <form>
+                    <div class="mb-3">
+                        <label for="username" class="form-label text-light">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter your username">
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label text-light">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label text-light">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn btn-warning">Signup</button>
+                </form>
             </div>
-        </div>
         </main>
         <footer class="bg-dark text-light py-4 mt-5">
             <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3">

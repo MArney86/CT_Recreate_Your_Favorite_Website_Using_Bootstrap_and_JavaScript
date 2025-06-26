@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Recreate your Favorite Website Using Bootstrap and JS</title>
+        <title>Your Current Order</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -303,8 +303,55 @@
                 </div>
             </nav>
         </header>
+        <section class="site-banner bg-dark text-light py-5">
+            <div class="container text-center">
+                <h1 class="display-4 fw-bold mb-2 text-warning">Your Cart </h1>
+            </div>
+        </section>
         <main>
-
+            <div class="row mb-3">
+                <div class="col-md-6 col-lg-8 mb-3">
+                    <div class="container py-3" id="cart-container">
+                        <div class="row mb-3">
+                            <div class="col">
+                                <h2 class="text-light">Your Cart</h2>
+                            </div>
+                        </div>
+                        <div class="alert alert-info" role="alert">Your cart is empty. Please add items to your cart.</div>
+                        <!-- Cart items will be dynamically inserted here -->
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="bg-dark text-light rounded-3 p-4 shadow-sm sticky-top" style="top: 90px;">
+                        <h4 class="mb-3 text-warning">Order Summary</h4>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal" class="fw-bold">$0.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Discount</span>
+                            <span id="cart-discount" class="text-success">-$0.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Sales Tax</span>
+                            <span id="cart-tax">$0.00</span>
+                        </div>
+                        <hr class="bg-secondary">
+                        <div class="d-flex justify-content-between fs-5 mb-3">
+                            <span>Total</span>
+                            <span id="cart-total" class="fw-bold text-warning">$0.00</span>
+                        </div>
+                        <button class="btn btn-warning w-100 fw-bold mb-3" id="checkout-btn">Proceed to Checkout</button>
+                        <form class="mt-2" id="coupon-form" autocomplete="off">
+                            <label for="coupon-code" class="form-label small text-secondary mb-1">Have a coupon?</label>
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control bg-dark text-light border-secondary" id="coupon-code" placeholder="Enter code">
+                                    <button class="btn btn-outline-light" type="submit" id="apply-discount-btn">Apply</button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer class="bg-dark text-light py-4 mt-5">
             <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3">

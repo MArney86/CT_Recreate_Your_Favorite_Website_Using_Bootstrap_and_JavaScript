@@ -18,9 +18,7 @@ Todo:
     - user orders
     - account settings
 - cart
-    - current order
-    - wishlist
-    - checkout
+    x current order
 - news
     x activity
     x market news

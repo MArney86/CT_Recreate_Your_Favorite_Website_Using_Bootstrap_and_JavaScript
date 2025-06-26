@@ -111,7 +111,14 @@ a, body, div, nav, header, ul, ol, li {
 }
 
 #user-drop-lg .dropdown-menu, #user-drop-sm .dropdown-menu {
+    position:fixed;
+    left: calc(100% - 250px);
+    top: 4rem;
     z-index: 1050;
+    max-width: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: normal;
     animation-name: user-slide-out;
     animation-duration: .75s;
     --bs-dropdown-bg: rgb(29, 29, 29);
@@ -278,9 +285,72 @@ div.offcanvas.offcanvas-start {
     margin-top: 4rem;
 }
 
+/* Styling for more uniform card sizes */
 .prod-card {
     max-width: 350px;
-    max-height: 450px;
+    min-height: 450px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.prod-card img {
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: scale-down;
+    border-radius: 4px;
+}
+
+/* Styling for uniform gallery card sizes */
+.gallery-card {
+    max-width: 250px;
+    min-height: 400px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-card img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: scale-down;
+    border-radius: 4px;
+}
+
+/* Styling for uniform news card sizes */
+.news-card {
+    max-width: 250px;
+    max-height: 500px;
     width: auto;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.news-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
 }
