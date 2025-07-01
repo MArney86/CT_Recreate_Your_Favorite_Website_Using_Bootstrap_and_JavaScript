@@ -205,6 +205,7 @@ function truncateWithElipsis(text, maxLength = 200) {
 document.addEventListener('DOMContentLoaded', () => { // Wait for the DOM to load
     let pageTitle = document.title;
 
+    if (pageTitle === "3DStore Login") {addLoginListeners();}
     if (pageTitle === "Welcome to 3DStore") {setupNewsletterForm();}
     if (pageTitle === "3DStore Market") {loadProductsMarket();} // Check if the page is the market page and load the products if in the market page // Call the function to setup the newsletter form
     if (pageTitle === "Your Current Order") {loadCart();} // Check if the page is the home page
@@ -212,9 +213,20 @@ document.addEventListener('DOMContentLoaded', () => { // Wait for the DOM to loa
     if (pageTitle === "3DStore Gallery") {loadGallery();} // Check if the page is the gallery page and load the gallery
     if (pageTitle === "3DStore Your Account Profile") {loadProfile();}
     if (pageTitle === "3DStore Contact Information") {attachMessageListeners();} // Check if the page is the contact page
+    if (pageTitle === "3DStore Signup") {addSignupListeners();} // Add the signup listeners if on the signup page
     
     checkLoginNavbar(); // Check if the user is logged in and update the navbar based on response from checking cookies
 });
+
+function addLoginListeners() {
+    const loginForm = document.getElementById("login-form"); // Get the login form from the document
+    if (loginForm) { // If the login form exists
+        loginForm.addEventListener('submit', (e) => { // Attach a submit event listener to the login form
+            e.preventDefault(); // Prevent the default form submission behavior
+            simLogin(e);
+        });
+    }
+}
 
 function buildCarousel(carouselId,cardArr,indexArr) {
     function createCarouselItem(isActive = false, start = 0) {
@@ -782,7 +794,7 @@ function loadGallery() {
         name: "Image Gamma",
         description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi urna neque, consectetur in lacus nec, ullamcorper egestas risus. Aliquam orci est, varius in lacus tincidunt, blandit sodales arcu. Nam aliquet enim eu metus imperdiet pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc tempus nibh at nisl ultrices commodo. Mauris magna leo, ultrices nec tincidunt in, semper id nibh. Curabitur congue pellentesque vestibulum. Quisque tristique pretium sapien, in tempus tortor ullamcorper id. Ut nec mollis ligula. Fusce fringilla vestibulum magna a gravida. Nunc ultricies lobortis leo. Suspendisse a nibh eros. Nullam quis eleifend purus. Curabitur in sapien nunc. Nulla facilisi. Nullam blandit elit in felis elementum, ac volutpat lectus iaculis.</p>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+                    <p>Duis aute irire dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
         usedSoftware: "Poser, Metasequoia",
         artist: "opossumexactly",
         type: "image",
@@ -949,7 +961,7 @@ function loadGallery() {
     }
 
 
-    //create the carousels for the Gallery features
+    //create the carousels for the gallery features
     //get the sections for the Carousels
     const galleryImages = document.getElementById("gallery-images");
     const galleryVideos = document.getElementById("gallery-videos");
@@ -1178,11 +1190,27 @@ function simLogout(event) {
     closeDropdowns();
 }
 
-function simSignup(event) {
+function simSignup(event, username, email, password) {
     // Prevent any default actions from the event
-    if (event) event.preventDefault();
-    // Redirect to signup.html with the values
-    window.location.href = "signup.html";
+    if (event) {
+        event.preventDefault();
+    }
+    
+    // If called from signup form with data, process the signup
+    if (username && email && password) {
+        // Store user data in cookies (simulating account creation)
+        document.cookie = `username=${username}; path=/; max-age=86400`; // Store username for 24 hours
+        document.cookie = "loggedIn=true; path=/; max-age=86400"; // Set logged in status
+        
+        // Show success message
+        alert(`Account created successfully! Welcome, ${username}!`);
+        
+        // Redirect to profile page or home page
+        window.location.href = "profile.html";
+    } else {
+        // If no data provided, redirect to signup.html (original behavior)
+        window.location.href = "signup.html";
+    }
 }
 
 function closeDropdowns() {
@@ -1414,4 +1442,54 @@ function addToCart(productID) {
     }
     sessionStorage.setItem("customerCart", JSON.stringify(customerCart)); // Save the cart back to session storage
     alert("Product added to cart!"); // Alert the user that the product has been added to the cart   
+}
+
+function addSignupListeners() {
+    const signupForm = document.getElementById("signup-form"); // Get the signup form from the document
+    if (signupForm) {
+        signupForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Get form values
+            const username = document.getElementById("signup-username").value.trim();
+            const email = document.getElementById("signup-email").value.trim();
+            const password = document.getElementById("signup-password").value.trim();
+            
+            // Basic validation
+            if (!username || !email || !password) {
+                alert("Please fill in all fields.");
+                return;
+            }
+            
+            // Simulate signup process
+            simSignup(event, username, email, password);
+        });
+    }
+}
+
+function updateCartBadge() {
+    const cartBadgeLg = document.getElementById("cart-badge-lg");
+    const cartBadgeSm = document.getElementById("cart-badge-sm");
+    
+    if (cart && cart.length > 0) {
+        const count = cart.length > 9 ? "9+" : cart.length.toString();
+        
+        if (cartBadgeLg) {
+            cartBadgeLg.textContent = count;
+            cartBadgeLg.style.display = "inline-block";
+        }
+        
+        if (cartBadgeSm) {
+            cartBadgeSm.textContent = count;
+            cartBadgeSm.style.display = "inline-block";
+        }
+    } else {
+        if (cartBadgeLg) {
+            cartBadgeLg.style.display = "none";
+        }
+        
+        if (cartBadgeSm) {
+            cartBadgeSm.style.display = "none";
+        }
+    }
 }

@@ -14,9 +14,9 @@ Todo:
     x best sellers
     x all products
 - profile
-    - user profile
-    - user orders
-    - account settings
+    x user profile
+    x user orders
+    x account settings
 - cart
     x current order
 - news
@@ -28,8 +28,8 @@ Todo:
     x trending
     x genres
 - signup
-    - signup form
-    - submit emulation
+    x signup form
+    x submit emulation
 - login
     x login form
     x login simulation
