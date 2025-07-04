@@ -216,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => { // Wait for the DOM to loa
     if (pageTitle === "3DStore Signup") {addSignupListeners();} // Add the signup listeners if on the signup page
     
     checkLoginNavbar(); // Check if the user is logged in and update the navbar based on response from checking cookies
+    updateCartBadge(); // Update cart badge on page load
 });
 
 function addLoginListeners() {
@@ -418,6 +419,7 @@ function removeCartItem(cartIndex) {
                         </div>
                         <div class="alert alert-info" role="alert">Your cart is empty. Please add items to your cart.</div>`; // Display a message indicating that the cart is empty
     }
+    updateCartBadge(); // Update the cart badge
     location.reload();
 }
 
@@ -507,6 +509,7 @@ function loadCart() {
 function clearCart() {
     sessionStorage.setItem("customerCart", JSON.stringify([])); // Clear the cart in session storage
     cart = JSON.parse(sessionStorage.getItem("customerCart")); // Get the updated cart from session storage
+    updateCartBadge(); // Update the cart badge
 }
 
 function loadNews() {
@@ -794,7 +797,7 @@ function loadGallery() {
         name: "Image Gamma",
         description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi urna neque, consectetur in lacus nec, ullamcorper egestas risus. Aliquam orci est, varius in lacus tincidunt, blandit sodales arcu. Nam aliquet enim eu metus imperdiet pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc tempus nibh at nisl ultrices commodo. Mauris magna leo, ultrices nec tincidunt in, semper id nibh. Curabitur congue pellentesque vestibulum. Quisque tristique pretium sapien, in tempus tortor ullamcorper id. Ut nec mollis ligula. Fusce fringilla vestibulum magna a gravida. Nunc ultricies lobortis leo. Suspendisse a nibh eros. Nullam quis eleifend purus. Curabitur in sapien nunc. Nulla facilisi. Nullam blandit elit in felis elementum, ac volutpat lectus iaculis.</p>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                    <p>Duis aute irire dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur `,
         usedSoftware: "Poser, Metasequoia",
         artist: "opossumexactly",
         type: "image",
@@ -961,7 +964,7 @@ function loadGallery() {
     }
 
 
-    //create the carousels for the gallery features
+    //create the carousels for the Gallery features
     //get the sections for the Carousels
     const galleryImages = document.getElementById("gallery-images");
     const galleryVideos = document.getElementById("gallery-videos");
@@ -1336,6 +1339,7 @@ function galleryModal(galleryID) {
                 <source src=${exhibit.media} type="video/mp4">
                 This Browser does not support the HTML5 Video Tag
             </video` : `img src=${exhibit.media} class="card-img-top w-100" alt=${exhibit.name}`
+
     innerModal.innerHTML = `<div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">${exhibit.name}</h3>
@@ -1441,6 +1445,8 @@ function addToCart(productID) {
         customerCart.push({id: productID, quantity: 1}); // Add new product to cart
     }
     sessionStorage.setItem("customerCart", JSON.stringify(customerCart)); // Save the cart back to session storage
+    cart = customerCart; // Update the global cart variable
+    updateCartBadge(); // Update the cart badge
     alert("Product added to cart!"); // Alert the user that the product has been added to the cart   
 }
 

@@ -8,7 +8,12 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+                               <div class="cart-link position-relative">
+                            <a href="cart.html" class="align-items-center"><span class="material-icons-outlined">shopping_cart</span></a>
+                            <span class="cart-badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-badge-sm" style="display: none;">
+                                0
+                            </span>
+                        </div>ink rel="icon" type="image/x-icon" href="/favicon.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&icon_names=account_circle,art_track,collections,contact_support,logout,manage_accounts,menu,newspaper,receipt_long,search,shopping_cart,stars,store&family=Open+Sans&family=Roboto" rel="stylesheet" />
@@ -138,12 +143,15 @@
                                     <h1>placeholder content</h1>
                                 </div>
                             </div>
-                            <div class="cart-link">
+                            <div class="cart-link position-relative">
                                 <a 
                                 href="cart.html" 
                                 class="align-items-center">
                                     <span class="material-icons-outlined">shopping_cart</span>
                                 </a>
+                                <span class="cart-badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-badge-lg" style="display: none;">
+                                    0
+                                </span>
                             </div>
                     </li>
                     </ul>
